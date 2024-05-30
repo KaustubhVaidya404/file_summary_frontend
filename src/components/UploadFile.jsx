@@ -1,6 +1,8 @@
 
 import axios from "axios";
 import React, { useState } from "react";
+import "../styles/uploadfile.css";
+
 
 export default function UploadFile() {
 
@@ -36,16 +38,35 @@ export default function UploadFile() {
     }
 
     return (
-        <div>
-            <h1>Upload File</h1>
-            <input type="file" onChange={handleFileChange} />
-            <button onClick={handleUpload}>Upload</button>
-            {processedData && (
-                <div>
-                    <h2>Processed Data</h2>
-                    <pre>{JSON.stringify(processedData, null, 2)}</pre>
-                </div>
-            )}
+        <div className="root">
+            <h1 className="heading1">Upload File</h1>
+            <input type="file" onChange={handleFileChange} className="fileinput"/>
+            <button onClick={handleUpload} className="uploadbutton">Upload</button>
+            {   processedData ? (
+                <table>
+                    <thead>
+                        <tr>
+                            <th>State</th>
+                            <th>Count</th>
+                            <th>Avg. DPD</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {processedData.map((data) => {
+                            return (
+                                <tr key={data.state}>
+                                    <td>{data.state}</td>
+                                    <td>{data.count}</td>
+                                    <td>{data.avg_dpd}</td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table> 
+            ) : (
+                <p>No data to display</p>
+            )
+            }
         </div>
     );
 
