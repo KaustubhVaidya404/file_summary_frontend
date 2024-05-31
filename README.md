@@ -55,20 +55,11 @@ Install my-project with npm
     
 ## API Reference
 
-#### Get all items
-
-```http
-  GET /api/items
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
 
 #### POST item
 
-```http
-  POST /api/items/
+```
+  POST /api/v1/upload/
 
-  {"headers": {'Content-Type': 'multipart/form-data'}}
+  {"headers": {"Content-Type": "multipart/form-data"}}
 ```
