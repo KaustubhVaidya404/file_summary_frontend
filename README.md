@@ -1,8 +1,74 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# File Summary Frontend
 
-Currently, two official plugins are available:
+This is the frontend repository of the project File Summary. This project is created for internship assignmnet. The project accepts csv/xslxx/xlxx file from the user and generates data and displays in record formate.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Features
+
+- Acceptes csv and xlsxx files
+- Fast execution
+- File storage
+
+
+## Tech Stack
+
+**Client:** React, Css
+
+**Server:** Django
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/KaustubhVaidya404/file_summary_frontend.git
+```
+
+Go to the project directory
+
+```bash
+  cd file_summary_frontend
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+
+## Installation
+
+Install my-project with npm
+
+```bash
+  npm i
+```
+    
+## API Reference
+
+#### Get all items
+
+```http
+  GET /api/items
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `api_key` | `string` | **Required**. Your API key |
+
+#### POST item
+
+```http
+  POST /api/items/
+
+  {"headers": {'Content-Type': 'multipart/form-data'}}
+```
